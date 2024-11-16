@@ -2,67 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://lassemay.github.io/eleventy-base-blog/blog/firstpost/</loc>
+		<loc>https://lassemay.github.io/unfinished-projects/blog/firstpost/</loc>
 		<lastmod>2018-05-01</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassemay.github.io/eleventy-base-blog/blog/secondpost/</loc>
+		<loc>https://lassemay.github.io/unfinished-projects/blog/secondpost/</loc>
 		<lastmod>2018-07-04</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassemay.github.io/eleventy-base-blog/blog/thirdpost/</loc>
+		<loc>https://lassemay.github.io/unfinished-projects/blog/thirdpost/</loc>
 		<lastmod>2018-08-24</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassemay.github.io/eleventy-base-blog/blog/fourthpost/</loc>
+		<loc>https://lassemay.github.io/unfinished-projects/blog/fourthpost/</loc>
 		<lastmod>2018-09-30</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassemay.github.io/eleventy-base-blog/about/</loc>
+		<loc>https://lassemay.github.io/unfinished-projects/about/</loc>
 		<lastmod>2024-11-16</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassemay.github.io/eleventy-base-blog/blog/</loc>
+		<loc>https://lassemay.github.io/unfinished-projects/blog/</loc>
 		<lastmod>2024-11-16</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassemay.github.io/eleventy-base-blog/</loc>
+		<loc>https://lassemay.github.io/unfinished-projects/</loc>
 		<lastmod>2024-11-16</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassemay.github.io/eleventy-base-blog/projects/</loc>
+		<loc>https://lassemay.github.io/unfinished-projects/projects/</loc>
 		<lastmod>2024-11-16</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassemay.github.io/eleventy-base-blog/tags/</loc>
+		<loc>https://lassemay.github.io/unfinished-projects/tags/</loc>
 		<lastmod>2024-11-16</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassemay.github.io/eleventy-base-blog/tags/another-tag/</loc>
+		<loc>https://lassemay.github.io/unfinished-projects/tags/another-tag/</loc>
 		<lastmod>2024-11-16</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassemay.github.io/eleventy-base-blog/tags/number-2/</loc>
+		<loc>https://lassemay.github.io/unfinished-projects/tags/number-2/</loc>
 		<lastmod>2024-11-16</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassemay.github.io/eleventy-base-blog/tags/second-tag/</loc>
+		<loc>https://lassemay.github.io/unfinished-projects/tags/second-tag/</loc>
 		<lastmod>2024-11-16</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassemay.github.io/eleventy-base-blog/tags/posts-with-two-tags/</loc>
+		<loc>https://lassemay.github.io/unfinished-projects/tags/posts-with-two-tags/</loc>
 		<lastmod>2024-11-16</lastmod>
 	</url>
 </urlset>
