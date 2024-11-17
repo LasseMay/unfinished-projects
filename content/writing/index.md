@@ -1,11 +1,11 @@
 ---
 layout: layouts/base.njk
 eleventyNavigation:
-  key: Projects & Writing
+  key: Writing
   order: 3
 ---
-# Projects & Writing
-Everything that is not the result of wage work and publications I (co)authored.
+# Writing
+Publications I (co)authored
 
 ## 2024
 
