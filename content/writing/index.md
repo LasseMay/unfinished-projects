@@ -1,10 +1,10 @@
 ---
 layout: layouts/base.njk
 eleventyNavigation:
-  key: Writing
+  key: Publications
   order: 3
 ---
-# Writing
+# Publications
 Publications I (co)authored
 
 ## 2024
@@ -124,23 +124,23 @@ url={https://realworldrobots.github.io/assets/files/Real_AI_Gym.pdf}}
 3D Printing in Space
 {% bibtex %}
 @ARTICLE{10.3389/frspt.2022.879542,
-  
-AUTHOR={Jonckers, Declan and Tauscher, Oliver and Thakur, Aditya R. and Maywald, Lasse},   
-	 
-TITLE={Additive Manufacturing of Large Structures Using Free-Flying Satellites},      
-	
-JOURNAL={Frontiers in Space Technologies},      
-	
-VOLUME={3},           
-	
-YEAR={2022},      
-	  
-URL={https://www.frontiersin.org/articles/10.3389/frspt.2022.879542},       
-	
-DOI={10.3389/frspt.2022.879542},      
-	
-ISSN={2673-5075},   
-   
+
+AUTHOR={Jonckers, Declan and Tauscher, Oliver and Thakur, Aditya R. and Maywald, Lasse},
+
+TITLE={Additive Manufacturing of Large Structures Using Free-Flying Satellites},
+
+JOURNAL={Frontiers in Space Technologies},
+
+VOLUME={3},
+
+YEAR={2022},
+
+URL={https://www.frontiersin.org/articles/10.3389/frspt.2022.879542},
+
+DOI={10.3389/frspt.2022.879542},
+
+ISSN={2673-5075},
+
 ABSTRACT={In-Space Manufacturing (ISM) is being investigated as a method for producing larger, cheaper, and more capable spacecraft and space stations. One of the most promising manufacturing techniques is additive manufacturing (AM) due to its inherent flexibility and low waste. The feasibility of a free-flying small spacecraft to manufacture large structures using a robotic arm with an AM end effector has been examined. These large structures would aid the construction of a large space station or spacecraft. Using the Experimental Lab for Proximity Operations and Space Situational Awareness (ELISSA) at the Institute of Space Systems at TU Braunschweig, a process has been designed and tested which is capable of producing structures with arbitrary length. This process was demonstrated by manufacturing support free truss elements of unlimited length using a free-floating mobile robot. Avenues for further extending the process to produce structures of any size in 3D space are discussed.}
 }
 {% endbibtex %}

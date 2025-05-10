@@ -40,7 +40,7 @@
             <nav class="nav" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: flex-end; flex: 2;">
                 {%- for entry in collections.all | eleventyNavigation %}
                     <a class="nav-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em;" href="{{ entry.url }}" {% if entry.url == page.url %} aria-current="page" {% endif %}>
-                        {{ entry.title }}
+                        {{ entry.title }} \
                     </a>
                 {%- endfor %}
             </nav>
