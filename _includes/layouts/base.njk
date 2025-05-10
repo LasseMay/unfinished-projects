@@ -31,16 +31,21 @@
         {#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
     <meta name="viewport" content="width=device-width, initial-scale=1"> </head>
     <body>
-        <header style='padding:1em; display: flex; justify-content: space-between; align-items: center; padding-right: 8em;'>
-            <a href="/" class="home-link" style='text-decoration: none; font-size: 1.2em;'>{{ metadata.title }}</a>
-            <div class='nav' style='margin-top: 0;'>
+
+			<!-- vertical on mobile -->
+        <header style="padding: 1em; padding-left: 0em; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1em;">
+            <a href="/" class="home-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em; flex: 2;">
+                {{ metadata.title }}
+            </a>
+            <nav class="nav" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: flex-end; flex: 2;">
                 {%- for entry in collections.all | eleventyNavigation %}
-                    <a style='text-decoration: none; margin-left: 1em; margin-right: 1em; font-size: 1.2em;' href="{{ entry.url }}" {% if entry.url == page.url %} aria-current="page" {% endif %}>
+                    <a class="nav-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em;" href="{{ entry.url }}" {% if entry.url == page.url %} aria-current="page" {% endif %}>
                         {{ entry.title }}
                     </a>
                 {%- endfor %}
-            </div>
+            </nav>
         </header>
+
         <main id="skip">
             <article>
                 <section>
