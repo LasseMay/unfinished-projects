@@ -9,7 +9,8 @@
         <link rel="alternate" href="/unfinished-projects/feed/feed.json" type="application/json" title="un?finished (projects|thoughts)">
         
         <style>
-        * { box-sizing: border-box; }
+        .postlist { counter-reset: start-from 5 }
+* { box-sizing: border-box; }
 .csl-bib-body {
     width: 55%;
 }
@@ -31,8 +32,8 @@
 */
 @font-face {
     font-family: 'Departure Mono';
-    src: url('../fonts/departure/DepartureMono-Regular.woff2') format('woff2'),
-         url('../fonts/departure/DepartureMono-Regular.woff') format('woff');
+    src: url('/fonts/departure/DepartureMono-Regular.woff2') format('woff2'),
+         url('/fonts/departure/DepartureMono-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -46,7 +47,7 @@
 
 @font-face {
     font-family: "et-book";
-    src: url("../fonts/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff");
+    src: url("/fonts/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -54,7 +55,7 @@
 
 @font-face {
     font-family: "et-book";
-    src: url("../fonts/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff");
+    src: url("/fonts/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff");
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -62,7 +63,7 @@
 
 @font-face {
     font-family: "et-book";
-    src: url("../fonts/et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff");
+    src: url("/fonts/et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff");
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -70,7 +71,7 @@
 
 @font-face {
     font-family: "et-book-roman-old-style";
-    src: url("../fonts/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff");
+    src: url("/fonts/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -560,10 +561,10 @@ label.margin-toggle:not(.sidenote-number) {
             </a>
             <nav class="nav" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: flex-end; flex: 2;">
                     <a class="nav-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em;" href="/unfinished-projects/about/">
-                        About Me
+                        About Me \
                     </a>
                     <a class="nav-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em;" href="/unfinished-projects/writing/">
-                        Writing
+                        Publications \
                     </a>
             </nav>
         </header>
@@ -571,17 +572,29 @@ label.margin-toggle:not(.sidenote-number) {
         <main id="skip">
             <article>
                 <section>
-                    
-
-
-<h1></h1>
-
-
+                    <ol reversed="" class="postlist">
+<p><li class="postlist-item">
+<a href="/unfinished-projects/blog/fourthpost/" class="postlist-link">This is my fourth post!</a>
+<time class="postlist-date" datetime="2018-09-30">September 2018</time>
+</li></p>
+<p><li class="postlist-item">
+<a href="/unfinished-projects/blog/thirdpost/" class="postlist-link">This is my third post.</a>
+<time class="postlist-date" datetime="2018-08-24">August 2018</time>
+</li></p>
+<p><li class="postlist-item">
+<a href="/unfinished-projects/blog/secondpost/" class="postlist-link">This is my second post with a much longer title.</a>
+<time class="postlist-date" datetime="2018-07-04">July 2018</time>
+</li></p>
+<p><li class="postlist-item">
+<a href="/unfinished-projects/blog/firstpost/" class="postlist-link">This is my first post.</a>
+<time class="postlist-date" datetime="2018-05-01">May 2018</time>
+</li></p>
+</ol>
 
                 </section>
             </article>
         </main>
         <footer></footer>
-        <!-- This page `/unfinished-projects/` was built on 2025-05-10T09:49:26.443Z -->
+        <!-- This page `/unfinished-projects/` was built on 2025-05-10T16:44:15.120Z -->
     </body>
 </html>
