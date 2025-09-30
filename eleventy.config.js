@@ -166,6 +166,6 @@ module.exports = function (eleventyConfig) {
 		// it will transform any absolute URLs in your HTML to include this
 		// folder name and does **not** affect where things go in the output folder.
 		// only set for gh
-		pathPrefix: "/unfinished-projects/",
+		//pathPrefix: "/unfinished-projects/",
 	};
 };
