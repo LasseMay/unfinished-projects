@@ -167,5 +167,6 @@ module.exports = function (eleventyConfig) {
 		// folder name and does **not** affect where things go in the output folder.
 		// only set for gh
 		//pathPrefix: "/unfinished-projects/",
+		pathPrefix: "/",
 	};
 };
