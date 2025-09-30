@@ -1,6 +1,6 @@
 module.exports = {
 	title: "un?finished (projects|thoughts)",
-	url: "https://lassemay.github.io/unfinished-projects/",
+	url: "https://lassejenning.sh/",
 	language: "en",
 	description: "I am writing about my experiences as a naval navel-gazer.",
 	author: {
