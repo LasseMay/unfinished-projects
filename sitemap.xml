@@ -2,57 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://lassejenning.sh/unfinished-projects/blog/firstpost/</loc>
+		<loc>https://lassejenning.sh/blog/firstpost/</loc>
 		<lastmod>2018-05-01</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassejenning.sh/unfinished-projects/blog/secondpost/</loc>
+		<loc>https://lassejenning.sh/blog/secondpost/</loc>
 		<lastmod>2018-07-04</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassejenning.sh/unfinished-projects/blog/thirdpost/</loc>
+		<loc>https://lassejenning.sh/blog/thirdpost/</loc>
 		<lastmod>2018-08-24</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassejenning.sh/unfinished-projects/blog/fourthpost/</loc>
+		<loc>https://lassejenning.sh/blog/fourthpost/</loc>
 		<lastmod>2018-09-30</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassejenning.sh/unfinished-projects/about/</loc>
+		<loc>https://lassejenning.sh/about/</loc>
 		<lastmod>2025-09-30</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassejenning.sh/unfinished-projects/tags/</loc>
+		<loc>https://lassejenning.sh/tags/</loc>
 		<lastmod>2025-09-30</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassejenning.sh/unfinished-projects/tags/another-tag/</loc>
+		<loc>https://lassejenning.sh/tags/another-tag/</loc>
 		<lastmod>2025-09-30</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassejenning.sh/unfinished-projects/tags/number-2/</loc>
+		<loc>https://lassejenning.sh/tags/number-2/</loc>
 		<lastmod>2025-09-30</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassejenning.sh/unfinished-projects/tags/second-tag/</loc>
+		<loc>https://lassejenning.sh/tags/second-tag/</loc>
 		<lastmod>2025-09-30</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassejenning.sh/unfinished-projects/tags/posts-with-two-tags/</loc>
+		<loc>https://lassejenning.sh/tags/posts-with-two-tags/</loc>
 		<lastmod>2025-09-30</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://lassejenning.sh/unfinished-projects/writing/</loc>
+		<loc>https://lassejenning.sh/writing/</loc>
 		<lastmod>2025-09-30</lastmod>
 	</url>
 </urlset>
