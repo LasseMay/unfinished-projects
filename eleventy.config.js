@@ -130,6 +130,31 @@ module.exports = function (eleventyConfig) {
 	// https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
 
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+	// fix empty p tags
+// eleventyConfig.addTransform("strip-empty-paragraphs", function(content) {
+//     const out = this.page && this.page.outputPath;
+//     if (out && out.endsWith(".html")) {
+//       // Find all <p>...</p> candidates and log them
+//       const paragraphs = content.match(/<p[\s\S]*?<\/p>/g) || [];
+//       console.log(`\n[strip-empty-paragraphs] Checking ${paragraphs.length} paragraphs in ${out}`);
+//
+//       paragraphs.forEach((p, i) => {
+//         console.log(`  #${i + 1}: "${p.replace(/\n/g, "\\n")}"`);
+//       });
+//
+//       // The regex below removes <p> that are completely empty or contain only whitespace, &nbsp; or <br>
+//       const cleaned = content.replace(/<p>(?:\s|&nbsp;|&#160;|<br\s*\/?>)*<\/p>/gi, "");
+//
+//       if (cleaned !== content) {
+//         console.log(`[strip-empty-paragraphs] Removed empty <p> tags in ${out}`);
+//       } else {
+//         console.log(`[strip-empty-paragraphs] No empty <p> tags removed in ${out}`);
+//       }
+//
+//       return cleaned;
+//     }
+//     return content;
+//   });
 
 	return {
 		// Control which files Eleventy will process
@@ -169,4 +194,5 @@ module.exports = function (eleventyConfig) {
 		//pathPrefix: "/unfinished-projects/",
 		pathPrefix: "/",
 	};
+
 };
