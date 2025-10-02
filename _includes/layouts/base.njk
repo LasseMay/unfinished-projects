@@ -1,6 +1,108 @@
 <!doctype html>
 <html lang="{{ metadata.language }}">
     <head>
+<style>
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: flex-end;
+    flex: 2;
+  }
+
+  .nav-link {
+    font-family: 'Departure Mono', monospace;
+    text-decoration: none;
+    font-size: 1.2em;
+    line-height: 1.2;
+    position: relative;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    text-decoration: underline;
+  }
+
+  .nav-link[aria-current="page"] {
+    text-decoration: underline;
+  }
+
+  .nav-select-wrap {
+    display: none;
+    position: relative;
+    width: 100%;
+    max-width: 12rem;
+    margin-left: auto;
+  }
+
+
+.nav-dropdown {
+  display: inline-block;
+  width: 100%;
+  font-family: 'Departure Mono', monospace;
+  font-size: 1.2em;
+  padding: 0.4em 0.4em 0.4em 1em;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  background-color: var(--nav-bg, #fff);
+  color: inherit;
+  cursor: pointer;
+  appearance: none;
+  text-decoration: none;
+}
+
+.nav-dropdown:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* caret */
+.nav-caret {
+  position: absolute;
+  right: 0.8em;
+  top: 50%;
+  transform: translateY(50%);
+  pointer-events: none;
+  font-size: 0.9em;
+  color: inherit;
+}
+
+/* light theme */
+@media (prefers-color-scheme: light) {
+  .nav-dropdown {
+    --nav-bg: #fff;
+  }
+}
+
+/* dark theme */
+@media (prefers-color-scheme: dark) {
+  .nav-dropdown {
+    --nav-bg: #111;   /* or match your dark background */
+    color: #eee;      /* readable text color */
+  }
+}
+
+  @media (max-width: 600px) {
+    .site-nav {
+      display: none;
+    }
+    .nav-select-wrap {
+      display: block;
+    }
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{ title or metadata.title }}</title>
@@ -34,16 +136,47 @@
 
 			<!-- vertical on mobile -->
         <header style="padding: 1em; padding-left: 0em; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1em;">
+
             <a href="/" class="home-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em; flex: 2;">
                 {{ metadata.title }}
             </a>
-            <nav class="nav" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: flex-end; flex: 2;">
-                {%- for entry in collections.all | eleventyNavigation %}
-                    <a class="nav-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em;" href="{{ entry.url }}" {% if entry.url == page.url %} aria-current="page" {% endif %}>
-                        {{ entry.title }} \
-                    </a>
-                {%- endfor %}
-            </nav>
+
+            <!-- <nav class="nav" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: flex-end; flex: 2;"> -->
+            <!--     {%- for entry in collections.all | eleventyNavigation %} -->
+            <!--         <a class="nav-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em;" href="{{ entry.url }}" {% if entry.url == page.url %} aria-current="page" {% endif %}> -->
+            <!--             {{ entry.title }} \ -->
+            <!--         </a> -->
+            <!--     {%- endfor %} -->
+            <!-- </nav> -->
+
+
+			 <nav class="site-nav" aria-label="Main">
+    {%- for entry in collections.all | eleventyNavigation %}
+      <a class="nav-link"
+         href="{{ entry.url }}"
+         {% if entry.url == page.url %} aria-current="page" {% endif %}>
+        {{ entry.title }}
+      </a>
+    {%- endfor %}
+  </nav>
+
+<div class="nav-select-wrap" aria-hidden="true">
+  <label for="nav-select" class="sr-only">Navigate</label>
+  <select id="nav-select" class="nav-dropdown"
+          onchange="if(this.value) window.location.href=this.value;">
+    <option value="/" {% if page.url == "/" %} selected {% endif %}>Home</option>
+    {%- for entry in collections.all | eleventyNavigation %}
+      <option value="{{ entry.url }}"
+              {% if entry.url == page.url %} selected {% endif %}>
+        {{ entry.title }}
+      </option>
+    {%- endfor %}
+  </select>
+  <!-- <span class="nav-caret" aria-hidden="true">▾</span> -->
+</div>
+
+
+
         </header>
 
         <main id="skip">
