@@ -4,14 +4,9 @@
 
 /* small screen styles */
 @media (max-width: 760px) {
-    .nav {
-        flex-direction: column;
-        align-items: flex-end; /* Align items to the right */
-    }
-    .nav-link {
-        margin: 0; /* Remove any extra margin for vertical stacking */
-        text-align: right; /* Ensure text is right-aligned */
-    }
+		.csl-bib-body {
+		    width: 100%;
+		}
 }
 
 
