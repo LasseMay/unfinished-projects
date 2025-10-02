@@ -18,22 +18,37 @@ function isFullUrl(url) {
 	}
 }
 
+// simple HTML escaper for the caption
+function escapeHtml(str = "") {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+
+function escapeAttr(str = "") {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;");
+}
+
 module.exports = function(eleventyConfig) {
   /* Back compatible image shortcode
      Usage in Markdown:
      {% image "./25.jpg", "Me", [320, 640], "(max-width: 40rem) 100vw, 640px", "round" %}
      If className includes "round" it crops square at build time
   */
-  eleventyConfig.addAsyncShortcode(
+eleventyConfig.addAsyncShortcode(
     "image",
     async function imageShortcode(src, alt, widths, sizes, className = "") {
       const input = isFullUrl(src) ? src : relativeToInputPath(this.page.inputPath, src);
       const formats = ["avif", "webp", "auto"];
 
-      // Ensure widths is an array with a sane default
       const widthArray = Array.isArray(widths) ? widths : [Number(widths) || 300];
 
-      // Optional square crop if class includes "round"
       const sharpOptions = className && String(className).includes("round")
         ? { fit: "cover", position: "center", height: widthArray[0] }
         : {};
@@ -46,20 +61,28 @@ module.exports = function(eleventyConfig) {
       });
 
       const imageAttributes = {
-        alt,
+        alt,                 // keep alt for screen readers
         sizes,
         class: className || "",
         loading: "lazy",
         decoding: "async"
       };
 
-      return eleventyImage.generateHTML(metadata, imageAttributes);
+      const pictureHtml = eleventyImage.generateHTML(metadata, imageAttributes);
+
+      // Tufte CSS: margin figure with caption in the margin
+      const caption = escapeHtml(alt || "");
+
+      return `
+<figure class="margin">
+  ${pictureHtml}
+  ${caption ? `<figcaption>${caption}</figcaption>` : ""}
+</figure>`.trim();
     }
   );
 
   /* New inlineImage shortcode with wrap and shape control
-     {% inlineImage src, alt, size=200, side="left", shape="rect"|"rounded"|"circle", radius=16, extraClass="" %}
-     Examples are shown below
+     {% inlineImage src, alt, size=200, side="left", shape="rect"|"rounded"|"circle", radius=16, extraClass="", figureStyle="" %}
   */
   eleventyConfig.addAsyncShortcode(
     "inlineImage",
@@ -70,32 +93,36 @@ module.exports = function(eleventyConfig) {
       side = "left",
       shape = "rect",
       radius = 16,
-      extraClass = ""
+      extraClass = "",
+      figureStyle = ""
     ) {
       const input = isFullUrl(src) ? src : relativeToInputPath(this.page.inputPath, src);
       const formats = ["avif", "webp", "auto"];
       const target = Number(size) || 200;
 
       // Square crop for circle shape
-      const sharpOptions = String(shape).toLowerCase() === "circle"
-        ? { fit: "cover", position: "center", height: target }
-        : {};
+      const sharpOptions =
+        String(shape).toLowerCase() === "circle"
+          ? { fit: "cover", position: "center", height: target }
+          : {};
 
       const metadata = await eleventyImage(input, {
         widths: [target],
         formats,
         outputDir: path.join(eleventyConfig.dir.output, "img"),
-        sharpOptions
+        sharpOptions,
       });
 
-      // Help CLS by adding width and height from the first generated file
+      // Help CLS using intrinsic size from the first generated file
       const firstFormat = Object.values(metadata)[0][0];
       const widthAttr = firstFormat.width;
       const heightAttr = firstFormat.height;
 
-      const sideClass = String(side).toLowerCase() === "right" ? "sideRight" : "sideLeft";
+      const sideClass =
+        String(side).toLowerCase() === "right" ? "sideRight" : "sideLeft";
       const s = String(shape).toLowerCase();
-      const shapeClass = s === "circle" ? "shapeCircle" : s === "rounded" ? "shapeRounded" : "shapeRect";
+      const shapeClass =
+        s === "circle" ? "shapeCircle" : s === "rounded" ? "shapeRounded" : "shapeRect";
 
       const inner = eleventyImage.generateHTML(metadata, {
         alt,
@@ -103,19 +130,24 @@ module.exports = function(eleventyConfig) {
         loading: "lazy",
         decoding: "async",
         width: widthAttr,
-        height: heightAttr
+        height: heightAttr,
       });
 
-      // Circle needs fixed width and height. Others can set width only.
-      const style = s === "circle"
-        ? `width:${target}px;height:${target}px;--radius:${radius}px;`
-        : `width:${target}px;--radius:${radius}px;`;
+      // Computed defaults
+      const baseFigureStyle =
+        s === "circle"
+          ? `width:${target}px;height:${target}px;--radius:${radius}px;`
+          : `width:${target}px;--radius:${radius}px;`;
+
+      // Append user style so it can override defaults if needed
+      const mergedFigureStyle =
+        baseFigureStyle + (figureStyle ? " " + figureStyle.trim() : "");
 
       return `
-        <figure class="inlineWrap ${sideClass} ${shapeClass}" style="${style}">
-          ${inner}
-        </figure>
-      `;
+<figure class="inlineWrap ${sideClass} ${shapeClass}" style="${escapeAttr(mergedFigureStyle)}">
+  ${inner}
+</figure>
+`.trim();
     }
   );
 };
