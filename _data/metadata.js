@@ -1,5 +1,5 @@
 module.exports = {
-	title: "un?finished (projects|thoughts)",
+	title: "Lasse Shala",
 	url: "https://lassejenning.sh/",
 	language: "en",
 	description: "I am writing about my experiences as a naval navel-gazer.",
