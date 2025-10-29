@@ -31,7 +31,7 @@
     display: none;
     position: relative;
     width: 100%;
-    max-width: 12rem;
+    max-width: 10rem;
     margin-left: auto;
   }
 
@@ -40,46 +40,31 @@
   display: inline-block;
   width: 100%;
   font-family: 'Departure Mono', monospace;
-  font-size: 1.2em;
-  padding: 0.4em 0.4em 0.4em 1em;
-  border: 1px solid currentColor;
+  font-size: 0.9em;
+  padding: 0.3em 0.3em 0.3em 0.8em;
+  border: 1px solid var(--color-border);
   border-radius: 4px;
-  background-color: var(--nav-bg, #fff);
-  color: inherit;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
   cursor: pointer;
   appearance: none;
   text-decoration: none;
 }
 
 .nav-dropdown:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--color-border);
   outline-offset: 2px;
 }
 
 /* caret */
 .nav-caret {
   position: absolute;
-  right: 0.8em;
+  right: 0.6em;
   top: 50%;
   transform: translateY(50%);
   pointer-events: none;
-  font-size: 0.9em;
-  color: inherit;
-}
-
-/* light theme */
-@media (prefers-color-scheme: light) {
-  .nav-dropdown {
-    --nav-bg: #fff;
-  }
-}
-
-/* dark theme */
-@media (prefers-color-scheme: dark) {
-  .nav-dropdown {
-    --nav-bg: #111;   /* or match your dark background */
-    color: #eee;      /* readable text color */
-  }
+  font-size: 0.8em;
+  color: var(--color-fg);
 }
 
   @media (max-width: 600px) {
@@ -118,10 +103,26 @@
     color: var(--color-fg-dim);
 }
 
+.csl-entry {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.csl-entry a {
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
 /* small screen styles */
 @media (max-width: 760px) {
 		.csl-bib-body {
 		    width: 100%;
+		}
+
+		.csl-entry a {
+		    display: inline-block;
+		    max-width: 100%;
+		    word-break: break-all;
 		}
 }
 
@@ -652,12 +653,8 @@ label.margin-toggle:not(.sidenote-number) {
 @media (max-width: 760px) {
     body {
         width: 95%;
-        /*padding-left: 8%;*/
-        /*padding-right: 8%;*/
-        /*padding-left: 4%;*/
-        /*padding-right: 4%;*/
-        padding-left: 0%;
-        padding-right: 0%;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 
     hr,
@@ -735,23 +732,12 @@ label.margin-toggle:not(.sidenote-number) {
     <body>
 
 			<!-- vertical on mobile -->
-        <header style="padding: 1em; padding-left: 0em; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1em;">
+        <header style="padding: 2em; padding-left: 0em; padding-right: 0em; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1em;">
 
             <a href="/" class="home-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em; flex: 2;">
                 Lasse Shala
             </a>
 
-            <!-- <nav class="nav" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: flex-end; flex: 2;"> -->
-            <!-- -->
-            <!--         <a class="nav-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em;" href="/blog/" > -->
-            <!--             Archive \ -->
-            <!--         </a> -->
-            <!-- -->
-            <!--         <a class="nav-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em;" href="/writing/" > -->
-            <!--             Publications \ -->
-            <!--         </a> -->
-            <!-- -->
-            <!-- </nav> -->
 
 
 			 <nav class="site-nav" aria-label="Main">
@@ -820,6 +806,6 @@ label.margin-toggle:not(.sidenote-number) {
             </article>
         </main>
         <footer></footer>
-        <!-- This page `/blog/fourthpost/` was built on 2025-10-29T10:39:53.430Z -->
+        <!-- This page `/blog/fourthpost/` was built on 2025-10-29T19:02:13.840Z -->
     </body>
 </html>

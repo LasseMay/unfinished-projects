@@ -31,7 +31,7 @@
     display: none;
     position: relative;
     width: 100%;
-    max-width: 12rem;
+    max-width: 10rem;
     margin-left: auto;
   }
 
@@ -40,46 +40,31 @@
   display: inline-block;
   width: 100%;
   font-family: 'Departure Mono', monospace;
-  font-size: 1.2em;
-  padding: 0.4em 0.4em 0.4em 1em;
-  border: 1px solid currentColor;
+  font-size: 0.9em;
+  padding: 0.3em 0.3em 0.3em 0.8em;
+  border: 1px solid var(--color-border);
   border-radius: 4px;
-  background-color: var(--nav-bg, #fff);
-  color: inherit;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
   cursor: pointer;
   appearance: none;
   text-decoration: none;
 }
 
 .nav-dropdown:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--color-border);
   outline-offset: 2px;
 }
 
 /* caret */
 .nav-caret {
   position: absolute;
-  right: 0.8em;
+  right: 0.6em;
   top: 50%;
   transform: translateY(50%);
   pointer-events: none;
-  font-size: 0.9em;
-  color: inherit;
-}
-
-/* light theme */
-@media (prefers-color-scheme: light) {
-  .nav-dropdown {
-    --nav-bg: #fff;
-  }
-}
-
-/* dark theme */
-@media (prefers-color-scheme: dark) {
-  .nav-dropdown {
-    --nav-bg: #111;   /* or match your dark background */
-    color: #eee;      /* readable text color */
-  }
+  font-size: 0.8em;
+  color: var(--color-fg);
 }
 
   @media (max-width: 600px) {
@@ -118,10 +103,26 @@
     color: var(--color-fg-dim);
 }
 
+.csl-entry {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.csl-entry a {
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
 /* small screen styles */
 @media (max-width: 760px) {
 		.csl-bib-body {
 		    width: 100%;
+		}
+
+		.csl-entry a {
+		    display: inline-block;
+		    max-width: 100%;
+		    word-break: break-all;
 		}
 }
 
@@ -652,12 +653,8 @@ label.margin-toggle:not(.sidenote-number) {
 @media (max-width: 760px) {
     body {
         width: 95%;
-        /*padding-left: 8%;*/
-        /*padding-right: 8%;*/
-        /*padding-left: 4%;*/
-        /*padding-right: 4%;*/
-        padding-left: 0%;
-        padding-right: 0%;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 
     hr,
@@ -735,23 +732,12 @@ label.margin-toggle:not(.sidenote-number) {
     <body>
 
 			<!-- vertical on mobile -->
-        <header style="padding: 1em; padding-left: 0em; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1em;">
+        <header style="padding: 2em; padding-left: 0em; padding-right: 0em; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1em;">
 
             <a href="/" class="home-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em; flex: 2;">
                 Lasse Shala
             </a>
 
-            <!-- <nav class="nav" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: flex-end; flex: 2;"> -->
-            <!-- -->
-            <!--         <a class="nav-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em;" href="/blog/" > -->
-            <!--             Archive \ -->
-            <!--         </a> -->
-            <!-- -->
-            <!--         <a class="nav-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em;" href="/writing/"  aria-current="page" > -->
-            <!--             Publications \ -->
-            <!--         </a> -->
-            <!-- -->
-            <!-- </nav> -->
 
 
 			 <nav class="site-nav" aria-label="Main">
@@ -793,7 +779,7 @@ label.margin-toggle:not(.sidenote-number) {
                 <section>
                     <h1>Publications</h1>
 <p>Region of Attraction Estimation for Free-Floating Systems under Time-Varying LQR Control
-RoA Estimation for Spacecraft <label for="marginnote-sifqgdd3l" class="margin-toggle">⊕</label><input type="checkbox" id="marginnote-sifqgdd3l" class="margin-toggle"><span class="marginnote">Awarded the Marc Pélegrin's Best Paper Award</span></p>
+RoA Estimation for Spacecraft <label for="marginnote-pwn5jm2cl" class="margin-toggle">⊕</label><input type="checkbox" id="marginnote-pwn5jm2cl" class="margin-toggle"><span class="marginnote">Awarded the Marc Pélegrin's Best Paper Award</span></p>
 <div class="csl-bib-body">
   <div data-csl-entry-id="1" class="csl-entry">Shala, L., Vyas, S., Ben-Larbi, M. K., Kumar, S., &#38; Stoll, E. (2024, June). Region of Attraction Estimation for Free-Floating Systems under Time-Varying LQR Control. <i>Proceedings of the 2024 CEAS EuroGNC Conference</i>.</div>
 </div>
@@ -829,7 +815,7 @@ RoA Estimation for Spacecraft <label for="marginnote-sifqgdd3l" class="margin-to
 <div class="csl-bib-body">
   <div data-csl-entry-id="1" class="csl-entry">Jonckers, D., Tauscher, O., Thakur, A. R., &#38; Maywald, L. (2022). Additive Manufacturing of Large Structures Using Free-Flying Satellites. <i>Frontiers in Space Technologies</i>, <i>3</i>. <a href="https://doi.org/10.3389/frspt.2022.879542" class="no-underline no-underline-url" target="_blank" rel="noopener noreferrer">https://doi.org/10.3389/frspt.2022.879542</a></div>
 </div>
-<p>RoA Estimation for Spacecraft <label for="marginnote-69mm0dh45" class="margin-toggle">⊕</label><input type="checkbox" id="marginnote-69mm0dh45" class="margin-toggle"><span class="marginnote">My Masters Thesis</span></p>
+<p>RoA Estimation for Spacecraft <label for="marginnote-ze2xqiwxc" class="margin-toggle">⊕</label><input type="checkbox" id="marginnote-ze2xqiwxc" class="margin-toggle"><span class="marginnote">My Masters Thesis</span></p>
 <div class="csl-bib-body">
   <div data-csl-entry-id="1" class="csl-entry">Shala, L., Vyas, S., Ben-Larbi, M. K., Kumar, S., &#38; Stoll, E. (2024). <i>Region of Attraction Estimation for Free-Floating Systems under Time-Varying LQR Control</i>.</div>
 </div>
@@ -838,6 +824,6 @@ RoA Estimation for Spacecraft <label for="marginnote-sifqgdd3l" class="margin-to
             </article>
         </main>
         <footer></footer>
-        <!-- This page `/writing/` was built on 2025-10-29T10:39:53.421Z -->
+        <!-- This page `/writing/` was built on 2025-10-29T19:02:13.835Z -->
     </body>
 </html>
