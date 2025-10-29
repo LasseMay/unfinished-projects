@@ -1,13 +1,13 @@
 /* Message Box */
 :root {
-	--color-message-box-bg: #F2ECBC;
-	--color-message-box-fg: #545464;
+	--color-message-box-bg: #FAEDCD;
+	--color-message-box-fg: #5C6A72;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-message-box-bg: #223249;
-		--color-message-box-fg: #DCD7BA;
+		--color-message-box-bg: #4D4C43;
+		--color-message-box-fg: #D3C6AA;
 	}
 }
 

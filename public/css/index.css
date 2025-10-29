@@ -78,22 +78,22 @@
 
 /* Tufte CSS styles */
 :root {
-    /* Kanagawa Lotus (Light) Theme */
-    --color-bg: #DCD5AC;
-    --color-fg: #545464;
-    --color-fg-dim: #43436c;
-    --color-border: #54546D;
-    --color-selection: #2D4F67;
+    /* Everforest Light Theme */
+    --color-bg: #FDF6E3;
+    --color-fg: #5C6A72;
+    --color-fg-dim: #708089;
+    --color-border: #E0DCC7;
+    --color-selection: #E9F0E9;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        /* Kanagawa Wave (Dark) Theme */
-        --color-bg: #16161D;
-        --color-fg: #DCD7BA;
-        --color-fg-dim: #9B9487;
-        --color-border: #54546D;
-        --color-selection: #2D4F67;
+        /* Everforest Dark Theme */
+        --color-bg: #2D353B;
+        --color-fg: #D3C6AA;
+        --color-fg-dim: #9DA9A0;
+        --color-border: #4F585E;
+        --color-selection: #3A515D;
     }
 }
 
