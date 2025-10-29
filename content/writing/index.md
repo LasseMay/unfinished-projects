@@ -5,9 +5,7 @@ eleventyNavigation:
   order: 3
 ---
 # Publications
-Publications I (co)authored
 
-## 2024
 
 Region of Attraction Estimation for Free-Floating Systems under Time-Varying LQR Control
 RoA Estimation for Spacecraft {% marginnote  "Awarded the Marc Pélegrin's Best Paper Award" %}
@@ -37,7 +35,6 @@ Robust Cooptimization
    month=may, pages={13271–13277} }
 {% endbibtex %}
 
-## 2023
 LQR for Free-Floating Systems
 {% bibtex %}
 @INPROCEEDINGS{freefloating,
@@ -81,7 +78,6 @@ abstract = {Recent increase in space debris combined with the increase in the nu
 }
 {% endbibtex %}
 
-## 2022
 
 Analytic RoA Estimation
 {% bibtex %}
@@ -146,7 +142,6 @@ ABSTRACT={In-Space Manufacturing (ISM) is being investigated as a method for pro
 {% endbibtex %}
 
 
-## 2021
 RoA Estimation for Spacecraft {% marginnote  'My Masters Thesis' %}
 {% bibtex %}
 @misc{shala2024region,
