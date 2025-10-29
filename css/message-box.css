@@ -1,18 +1,22 @@
 /* Message Box */
-.message-box {
-	--color-message-box: #F2ECBC;
+:root {
+	--color-message-box-bg: #F2ECBC;
+	--color-message-box-fg: #545464;
+}
 
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-message-box-bg: #223249;
+		--color-message-box-fg: #DCD7BA;
+	}
+}
+
+.message-box {
 	display: block;
-	background-color: var(--color-message-box);
-	color: #545464;
+	background-color: var(--color-message-box-bg);
+	color: var(--color-message-box-fg);
 	padding: 1em 0.625em; /* 16px 10px /16 */
 }
 .message-box ol {
 	margin-top: 0;
-}
-
-@media (prefers-color-scheme: dark) {
-	.message-box {
-		--color-message-box: #223249;
-	}
 }

@@ -115,6 +115,7 @@
         * { box-sizing: border-box; }
 .csl-bib-body {
     width: 55%;
+    color: var(--color-fg-dim);
 }
 
 /* small screen styles */
@@ -175,6 +176,26 @@
 }
 
 /* Tufte CSS styles */
+:root {
+    /* Kanagawa Lotus (Light) Theme */
+    --color-bg: #DCD5AC;
+    --color-fg: #545464;
+    --color-fg-dim: #43436c;
+    --color-border: #54546D;
+    --color-selection: #2D4F67;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Kanagawa Wave (Dark) Theme */
+        --color-bg: #16161D;
+        --color-fg: #DCD7BA;
+        --color-fg-dim: #9B9487;
+        --color-border: #54546D;
+        --color-selection: #2D4F67;
+    }
+}
+
 html {
     font-size: 15px;
 }
@@ -184,26 +205,11 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-left: 12.5%;
-    /* font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; */
     font-family: et-book;
-    /* background-color: #fffff8; */
-    /* color: #111; */
-    /*background-color: rgb(237, 237, 203);*/
-    /*color: rgb(90, 126, 217);*/
-    color: #545464;
-    background-color: #DCD5AC;
-    /* color: #607161; */
-    /* background-color: #EFEAD8; */
+    color: var(--color-fg);
+    background-color: var(--color-bg);
     max-width: 1400px;
     counter-reset: sidenote-counter;
-}
-
-/* Adds dark mode */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #16161D;
-        color: #DCD7BA;
-    }
 }
 
 h1 {
@@ -259,7 +265,7 @@ hr {
     height: 1px;
     width: 55%;
     border: 0;
-    border-top: 1px solid #54546D;
+    border-top: 1px solid var(--color-border);
     margin: 1em 0;
     padding: 0;
 }
@@ -439,7 +445,7 @@ a:link,
 
 a:link::selection,
 a:link::-moz-selection {
-    background: #2D4F67;
+    background: var(--color-selection);
 }
 
 /* Sidenotes, margin notes, figures, captions */
@@ -811,6 +817,6 @@ label.margin-toggle:not(.sidenote-number) {
             </article>
         </main>
         <footer></footer>
-        <!-- This page `/tags/` was built on 2025-10-29T08:40:39.362Z -->
+        <!-- This page `/tags/` was built on 2025-10-29T10:39:53.432Z -->
     </body>
 </html>

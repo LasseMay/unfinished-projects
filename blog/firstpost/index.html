@@ -115,6 +115,7 @@
         * { box-sizing: border-box; }
 .csl-bib-body {
     width: 55%;
+    color: var(--color-fg-dim);
 }
 
 /* small screen styles */
@@ -175,6 +176,26 @@
 }
 
 /* Tufte CSS styles */
+:root {
+    /* Kanagawa Lotus (Light) Theme */
+    --color-bg: #DCD5AC;
+    --color-fg: #545464;
+    --color-fg-dim: #43436c;
+    --color-border: #54546D;
+    --color-selection: #2D4F67;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Kanagawa Wave (Dark) Theme */
+        --color-bg: #16161D;
+        --color-fg: #DCD7BA;
+        --color-fg-dim: #9B9487;
+        --color-border: #54546D;
+        --color-selection: #2D4F67;
+    }
+}
+
 html {
     font-size: 15px;
 }
@@ -184,26 +205,11 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-left: 12.5%;
-    /* font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; */
     font-family: et-book;
-    /* background-color: #fffff8; */
-    /* color: #111; */
-    /*background-color: rgb(237, 237, 203);*/
-    /*color: rgb(90, 126, 217);*/
-    color: #545464;
-    background-color: #DCD5AC;
-    /* color: #607161; */
-    /* background-color: #EFEAD8; */
+    color: var(--color-fg);
+    background-color: var(--color-bg);
     max-width: 1400px;
     counter-reset: sidenote-counter;
-}
-
-/* Adds dark mode */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #16161D;
-        color: #DCD7BA;
-    }
 }
 
 h1 {
@@ -259,7 +265,7 @@ hr {
     height: 1px;
     width: 55%;
     border: 0;
-    border-top: 1px solid #54546D;
+    border-top: 1px solid var(--color-border);
     margin: 1em 0;
     padding: 0;
 }
@@ -439,7 +445,7 @@ a:link,
 
 a:link::selection,
 a:link::-moz-selection {
-    background: #2D4F67;
+    background: var(--color-selection);
 }
 
 /* Sidenotes, margin notes, figures, captions */
@@ -799,9 +805,9 @@ label.margin-toggle:not(.sidenote-number) {
 </p>
 
 <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
-<p>Bring <label for="marginnote-vjvz5o1r6" class="margin-toggle">⊕</label><input type="checkbox" id="marginnote-vjvz5o1r6" class="margin-toggle"><span class="marginnote">Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</span> to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+<p>Bring <label for="marginnote-975pb6nrs" class="margin-toggle">⊕</label><input type="checkbox" id="marginnote-975pb6nrs" class="margin-toggle"><span class="marginnote">Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</span> to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
 <h2>Section Header</h2>
-<p>Capitalize <label for="sidenote-qq76eknvh" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sidenote-qq76eknvh" class="margin-toggle"><span class="sidenote">Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</span> on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+<p>Capitalize <label for="sidenote-vsbzqjvqx" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sidenote-vsbzqjvqx" class="margin-toggle"><span class="sidenote">Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</span> on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
 <pre class="language-diff-js" tabindex="0"><code class="language-diff-js"><span class="token unchanged language-js"><span class="token prefix unchanged"> </span><span class="token comment">// this is a command</span>
 <span class="token prefix unchanged"> </span><span class="token keyword">function</span> <span class="token function">myCommand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 </span><span class="token inserted-sign inserted language-js"><span class="token prefix inserted">+</span>  <span class="token keyword">let</span> counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -820,6 +826,6 @@ label.margin-toggle:not(.sidenote-number) {
             </article>
         </main>
         <footer></footer>
-        <!-- This page `/blog/firstpost/` was built on 2025-10-29T08:40:39.357Z -->
+        <!-- This page `/blog/firstpost/` was built on 2025-10-29T10:39:53.427Z -->
     </body>
 </html>
