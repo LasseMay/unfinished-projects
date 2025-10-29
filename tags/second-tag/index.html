@@ -18,15 +18,17 @@
     border-radius: 50px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   :root {
-    --header-bg: #E5DDB0;
+    --header-bg: rgba(229, 221, 176, 0.45);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --header-bg: #1F1F28;
+      --header-bg: rgba(31, 31, 40, 0.65);
     }
   }
 
@@ -74,9 +76,14 @@
 
   .home-link {
     font-family: 'Departure Mono', monospace;
-    text-decoration: none;
+    text-decoration: none !important;
     font-size: 1.2em;
     flex: 2;
+  }
+  
+  .home-link:hover,
+  .home-link:focus-visible {
+    text-decoration: none !important;
   }
 
   .nav-dropdown {
@@ -144,7 +151,7 @@
 
     window.addEventListener('scroll', () => {
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      
+
       if (Math.abs(currentScroll - lastScroll) < threshold) {
         return;
       }
@@ -876,6 +883,6 @@ label.margin-toggle:not(.sidenote-number) {
             </article>
         </main>
         <footer></footer>
-        <!-- This page `/tags/second-tag/` was built on 2025-10-29T19:25:06.347Z -->
+        <!-- This page `/tags/second-tag/` was built on 2025-10-29T19:33:19.300Z -->
     </body>
 </html>

@@ -18,15 +18,17 @@
     border-radius: 50px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   :root {
-    --header-bg: #E5DDB0;
+    --header-bg: rgba(229, 221, 176, 0.45);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --header-bg: #1F1F28;
+      --header-bg: rgba(31, 31, 40, 0.65);
     }
   }
 
@@ -74,9 +76,14 @@
 
   .home-link {
     font-family: 'Departure Mono', monospace;
-    text-decoration: none;
+    text-decoration: none !important;
     font-size: 1.2em;
     flex: 2;
+  }
+  
+  .home-link:hover,
+  .home-link:focus-visible {
+    text-decoration: none !important;
   }
 
   .nav-dropdown {
@@ -144,7 +151,7 @@
 
     window.addEventListener('scroll', () => {
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      
+
       if (Math.abs(currentScroll - lastScroll) < threshold) {
         return;
       }
@@ -848,7 +855,7 @@ label.margin-toggle:not(.sidenote-number) {
                 <section>
                     <h1>Publications</h1>
 <p>Region of Attraction Estimation for Free-Floating Systems under Time-Varying LQR Control
-RoA Estimation for Spacecraft <label for="marginnote-i9sod3gs6" class="margin-toggle">⊕</label><input type="checkbox" id="marginnote-i9sod3gs6" class="margin-toggle"><span class="marginnote">Awarded the Marc Pélegrin's Best Paper Award</span></p>
+RoA Estimation for Spacecraft <label for="marginnote-em5al5s52" class="margin-toggle">⊕</label><input type="checkbox" id="marginnote-em5al5s52" class="margin-toggle"><span class="marginnote">Awarded the Marc Pélegrin's Best Paper Award</span></p>
 <div class="csl-bib-body">
   <div data-csl-entry-id="1" class="csl-entry">Shala, L., Vyas, S., Ben-Larbi, M. K., Kumar, S., &#38; Stoll, E. (2024, June). Region of Attraction Estimation for Free-Floating Systems under Time-Varying LQR Control. <i>Proceedings of the 2024 CEAS EuroGNC Conference</i>.</div>
 </div>
@@ -884,7 +891,7 @@ RoA Estimation for Spacecraft <label for="marginnote-i9sod3gs6" class="margin-to
 <div class="csl-bib-body">
   <div data-csl-entry-id="1" class="csl-entry">Jonckers, D., Tauscher, O., Thakur, A. R., &#38; Maywald, L. (2022). Additive Manufacturing of Large Structures Using Free-Flying Satellites. <i>Frontiers in Space Technologies</i>, <i>3</i>. <a href="https://doi.org/10.3389/frspt.2022.879542" class="no-underline no-underline-url" target="_blank" rel="noopener noreferrer">https://doi.org/10.3389/frspt.2022.879542</a></div>
 </div>
-<p>RoA Estimation for Spacecraft <label for="marginnote-uz1g16l3o" class="margin-toggle">⊕</label><input type="checkbox" id="marginnote-uz1g16l3o" class="margin-toggle"><span class="marginnote">My Masters Thesis</span></p>
+<p>RoA Estimation for Spacecraft <label for="marginnote-irfpeo3st" class="margin-toggle">⊕</label><input type="checkbox" id="marginnote-irfpeo3st" class="margin-toggle"><span class="marginnote">My Masters Thesis</span></p>
 <div class="csl-bib-body">
   <div data-csl-entry-id="1" class="csl-entry">Shala, L., Vyas, S., Ben-Larbi, M. K., Kumar, S., &#38; Stoll, E. (2024). <i>Region of Attraction Estimation for Free-Floating Systems under Time-Varying LQR Control</i>.</div>
 </div>
@@ -893,6 +900,6 @@ RoA Estimation for Spacecraft <label for="marginnote-i9sod3gs6" class="margin-to
             </article>
         </main>
         <footer></footer>
-        <!-- This page `/writing/` was built on 2025-10-29T19:25:06.339Z -->
+        <!-- This page `/writing/` was built on 2025-10-29T19:33:19.293Z -->
     </body>
 </html>
