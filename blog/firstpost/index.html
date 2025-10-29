@@ -2,9 +2,45 @@
 <html lang="en">
     <head>
 <style>
+  header {
+    position: sticky;
+    top: 1em;
+    z-index: 100;
+    padding: 1em 1.5em;
+    margin: 1em 0;
+    max-width: 90%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    background-color: var(--header-bg);
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  :root {
+    --header-bg: #E5DDB0;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --header-bg: #1F1F28;
+    }
+  }
+
+  @media (max-width: 900px) {
+    header {
+      border-radius: 12px;
+      max-width: 95%;
+      padding: 0.8em 1em;
+    }
+  }
+
   .site-nav {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 1em;
     justify-content: flex-end;
     flex: 2;
@@ -16,6 +52,7 @@
     font-size: 1.2em;
     line-height: 1.2;
     position: relative;
+    white-space: nowrap;
   }
 
   .nav-link:hover,
@@ -35,45 +72,54 @@
     margin-left: auto;
   }
 
+  .home-link {
+    font-family: 'Departure Mono', monospace;
+    text-decoration: none;
+    font-size: 1.2em;
+    flex: 2;
+  }
 
-.nav-dropdown {
-  display: inline-block;
-  width: 100%;
-  font-family: 'Departure Mono', monospace;
-  font-size: 0.9em;
-  padding: 0.3em 0.3em 0.3em 0.8em;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  background-color: var(--color-bg);
-  color: var(--color-fg);
-  cursor: pointer;
-  appearance: none;
-  text-decoration: none;
-}
+  .nav-dropdown {
+    display: inline-block;
+    width: 100%;
+    font-family: 'Departure Mono', monospace;
+    font-size: 0.9em;
+    padding: 0.3em 0.3em 0.3em 0.8em;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    cursor: pointer;
+    appearance: none;
+    text-decoration: none;
+  }
 
-.nav-dropdown:focus-visible {
-  outline: 2px solid var(--color-border);
-  outline-offset: 2px;
-}
+  .nav-dropdown:focus-visible {
+    outline: 2px solid var(--color-border);
+    outline-offset: 2px;
+  }
 
-/* caret */
-.nav-caret {
-  position: absolute;
-  right: 0.6em;
-  top: 50%;
-  transform: translateY(50%);
-  pointer-events: none;
-  font-size: 0.8em;
-  color: var(--color-fg);
-}
-
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     .site-nav {
       display: none;
     }
     .nav-select-wrap {
       display: block;
     }
+  }
+
+  .nav-caret {
+    position: absolute;
+    right: 0.6em;
+    top: 50%;
+    transform: translateY(50%);
+    pointer-events: none;
+    font-size: 0.8em;
+    color: var(--color-fg);
+  }
+
+  header.header-hidden {
+    transform: translateY(-150%);
   }
 
   .sr-only {
@@ -88,6 +134,31 @@
     border: 0;
   }
 </style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let lastScroll = 0;
+    const header = document.querySelector('header');
+    const threshold = 10;
+
+    if (!header) return;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (Math.abs(currentScroll - lastScroll) < threshold) {
+        return;
+      }
+
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        header.classList.add('header-hidden');
+      } else {
+        header.classList.remove('header-hidden');
+      }
+
+      lastScroll = currentScroll;
+    });
+  });
+</script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>This is my first post.</title>
@@ -731,10 +802,8 @@ label.margin-toggle:not(.sidenote-number) {
     <meta name="viewport" content="width=device-width, initial-scale=1"> </head>
     <body>
 
-			<!-- vertical on mobile -->
-        <header style="padding: 2em; padding-left: 0em; padding-right: 0em; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1em;">
-
-            <a href="/" class="home-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em; flex: 2;">
+        <header>
+            <a href="/" class="home-link">
                 Lasse Shala
             </a>
 
@@ -791,9 +860,9 @@ label.margin-toggle:not(.sidenote-number) {
 </p>
 
 <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
-<p>Bring <label for="marginnote-9r9s0wgq2" class="margin-toggle">⊕</label><input type="checkbox" id="marginnote-9r9s0wgq2" class="margin-toggle"><span class="marginnote">Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</span> to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+<p>Bring <label for="marginnote-cf117genk" class="margin-toggle">⊕</label><input type="checkbox" id="marginnote-cf117genk" class="margin-toggle"><span class="marginnote">Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</span> to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
 <h2>Section Header</h2>
-<p>Capitalize <label for="sidenote-my309jugj" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sidenote-my309jugj" class="margin-toggle"><span class="sidenote">Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</span> on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+<p>Capitalize <label for="sidenote-vpnupbjx0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sidenote-vpnupbjx0" class="margin-toggle"><span class="sidenote">Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</span> on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
 <pre class="language-diff-js" tabindex="0"><code class="language-diff-js"><span class="token unchanged language-js"><span class="token prefix unchanged"> </span><span class="token comment">// this is a command</span>
 <span class="token prefix unchanged"> </span><span class="token keyword">function</span> <span class="token function">myCommand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 </span><span class="token inserted-sign inserted language-js"><span class="token prefix inserted">+</span>  <span class="token keyword">let</span> counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -812,6 +881,6 @@ label.margin-toggle:not(.sidenote-number) {
             </article>
         </main>
         <footer></footer>
-        <!-- This page `/blog/firstpost/` was built on 2025-10-29T19:02:13.838Z -->
+        <!-- This page `/blog/firstpost/` was built on 2025-10-29T19:25:06.343Z -->
     </body>
 </html>
