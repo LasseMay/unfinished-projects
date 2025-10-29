@@ -75,8 +75,8 @@ body {
     /* color: #111; */
     /*background-color: rgb(237, 237, 203);*/
     /*color: rgb(90, 126, 217);*/
-    color: #1C1C1C;
-    background-color: #F5E8D8;
+    color: #545464;
+    background-color: #DCD5AC;
     /* color: #607161; */
     /* background-color: #EFEAD8; */
     max-width: 1400px;
@@ -86,16 +86,8 @@ body {
 /* Adds dark mode */
 @media (prefers-color-scheme: dark) {
     body {
-        /* background-color: #607161; */
-        /* color: #EFEAD8; */
-        background-color: #1C1C1C;
-        color: #F5E8D8;
-        /*background-color: rgb(37, 90, 114);*/
-        /*color: rgb(153, 204, 144);*/
-        /*background: rgb(59, 56, 85);*/
-        /*color: rgb(188, 160, 149);*/
-        /*background: rgb(71, 90, 111);*/
-        /*color: rgb(237, 224, 176);*/
+        background-color: #16161D;
+        color: #DCD7BA;
     }
 }
 
@@ -152,7 +144,7 @@ hr {
     height: 1px;
     width: 55%;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #54546D;
     margin: 1em 0;
     padding: 0;
 }
@@ -332,8 +324,7 @@ a:link,
 
 a:link::selection,
 a:link::-moz-selection {
-    /* text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe; */
-    background: #b4d5fe;
+    background: #2D4F67;
 }
 
 /* Sidenotes, margin notes, figures, captions */
