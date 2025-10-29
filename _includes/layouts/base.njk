@@ -31,7 +31,7 @@
     display: none;
     position: relative;
     width: 100%;
-    max-width: 12rem;
+    max-width: 10rem;
     margin-left: auto;
   }
 
@@ -40,46 +40,31 @@
   display: inline-block;
   width: 100%;
   font-family: 'Departure Mono', monospace;
-  font-size: 1.2em;
-  padding: 0.4em 0.4em 0.4em 1em;
-  border: 1px solid currentColor;
+  font-size: 0.9em;
+  padding: 0.3em 0.3em 0.3em 0.8em;
+  border: 1px solid var(--color-border);
   border-radius: 4px;
-  background-color: var(--nav-bg, #fff);
-  color: inherit;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
   cursor: pointer;
   appearance: none;
   text-decoration: none;
 }
 
 .nav-dropdown:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--color-border);
   outline-offset: 2px;
 }
 
 /* caret */
 .nav-caret {
   position: absolute;
-  right: 0.8em;
+  right: 0.6em;
   top: 50%;
   transform: translateY(50%);
   pointer-events: none;
-  font-size: 0.9em;
-  color: inherit;
-}
-
-/* light theme */
-@media (prefers-color-scheme: light) {
-  .nav-dropdown {
-    --nav-bg: #fff;
-  }
-}
-
-/* dark theme */
-@media (prefers-color-scheme: dark) {
-  .nav-dropdown {
-    --nav-bg: #111;   /* or match your dark background */
-    color: #eee;      /* readable text color */
-  }
+  font-size: 0.8em;
+  color: var(--color-fg);
 }
 
   @media (max-width: 600px) {
@@ -135,19 +120,12 @@
     <body>
 
 			<!-- vertical on mobile -->
-        <header style="padding: 1em; padding-left: 0em; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1em;">
+        <header style="padding: 2em; padding-left: 0em; padding-right: 0em; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1em;">
 
             <a href="/" class="home-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em; flex: 2;">
                 {{ metadata.title }}
             </a>
 
-            <!-- <nav class="nav" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: flex-end; flex: 2;"> -->
-            <!--     {%- for entry in collections.all | eleventyNavigation %} -->
-            <!--         <a class="nav-link" style="font-family: 'Departure Mono', monospace; text-decoration: none; font-size: 1.2em;" href="{{ entry.url }}" {% if entry.url == page.url %} aria-current="page" {% endif %}> -->
-            <!--             {{ entry.title }} \ -->
-            <!--         </a> -->
-            <!--     {%- endfor %} -->
-            <!-- </nav> -->
 
 
 			 <nav class="site-nav" aria-label="Main">

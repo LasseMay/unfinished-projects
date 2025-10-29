@@ -3,10 +3,26 @@
     color: var(--color-fg-dim);
 }
 
+.csl-entry {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.csl-entry a {
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
 /* small screen styles */
 @media (max-width: 760px) {
 		.csl-bib-body {
 		    width: 100%;
+		}
+
+		.csl-entry a {
+		    display: inline-block;
+		    max-width: 100%;
+		    word-break: break-all;
 		}
 }
 
@@ -537,12 +553,8 @@ label.margin-toggle:not(.sidenote-number) {
 @media (max-width: 760px) {
     body {
         width: 95%;
-        /*padding-left: 8%;*/
-        /*padding-right: 8%;*/
-        /*padding-left: 4%;*/
-        /*padding-right: 4%;*/
-        padding-left: 0%;
-        padding-right: 0%;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 
     hr,
